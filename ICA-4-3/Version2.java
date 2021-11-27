@@ -49,10 +49,10 @@ public class Version2 {
         System.out.println("ICA-4-3 Version 2.");
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please enter your gross amount: ");
-        double gross = input.nextDouble();
         System.out.print("Please enter your name: ");
-        String name = input.next();
+        String name = input.nextLine();
+        System.out.print("Please enter your gross amount: ");
+        double gross = Double.parseDouble(input.nextLine());
         input.close();
 
         PrintWriter output = new PrintWriter(new File("MonthlyPaycheck.txt"));
