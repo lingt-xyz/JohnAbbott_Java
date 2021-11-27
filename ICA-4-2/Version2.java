@@ -43,6 +43,7 @@ public class Version2 {
             double increase = input.nextDouble();
             output.printf("%s %s %.2f%n", fName, lName, salary * (1 + increase * 0.01));
         }
+        
         output.close();
         input.close();
     }
