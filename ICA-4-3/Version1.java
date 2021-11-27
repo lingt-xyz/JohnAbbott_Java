@@ -42,14 +42,14 @@ public class Version1 {
 
         PrintWriter output = new PrintWriter(new File("MonthlyPaycheck.txt"));
         output.println(name);
-        output.printf("Gross Amount: 		    $ %.2f%n", gross);
-        output.printf("Federal Tax: 		    $ %.2f%n", gross * 0.15);
-        output.printf("State Tax: 		        $ %.2f%n", gross * 0.035);
-        output.printf("Social Security Tax: 	$ %.2f%n", gross * 0.0575);
-        output.printf("Medicare/Medicaid Tax: 	$ %.2f%n", gross * 0.0275);
-        output.printf("Pension Plan: 		    $ %.2f%n", gross * 0.05);
-        output.printf("Health Insurance: 	    $ %.2f%n", 75.00);
-        output.printf("Net Pay: 		        $ %.2f%n", gross - gross * (0.15 + 0.035 + 0.0575 + 0.0275 + 0.05) - 75);
+        output.printf("Gross Amount:            $ %.2f%n", gross);
+        output.printf("Federal Tax:             $ %.2f%n", gross * 0.15);
+        output.printf("State Tax:               $ %.2f%n", gross * 0.035);
+        output.printf("Social Security Tax:     $ %.2f%n", gross * 0.0575);
+        output.printf("Medicare/Medicaid Tax:   $ %.2f%n", gross * 0.0275);
+        output.printf("Pension Plan:            $ %.2f%n", gross * 0.05);
+        output.printf("Health Insurance:        $ %.2f%n", 75.00);
+        output.printf("Net Pay:                 $ %.2f%n", gross - gross * (0.15 + 0.035 + 0.0575 + 0.0275 + 0.05) - 75);
         output.close();
     }
 }
