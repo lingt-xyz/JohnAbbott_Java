@@ -29,7 +29,7 @@ import java.util.Scanner;
     Health Insurance: 	    $ 75.00
     Net Pay: 		        $ 2356.00
  */
-class Version1 {
+public class Version1 {
     public static void main(String[] args) throws IOException {
         System.out.println("ICA-4-3 Version 1.");
 

@@ -29,7 +29,7 @@ import java.util.Scanner;
     Health Insurance: 	    $ 75.00
     Net Pay: 		        $ 2356.00
  */
-class Version2 {
+public class Version2 {
     public static void main(String[] args) throws IOException {
         MonthlyPaycheck();
     }
