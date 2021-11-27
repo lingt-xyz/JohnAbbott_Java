@@ -31,25 +31,40 @@ import java.util.Scanner;
  */
 class Version2 {
     public static void main(String[] args) throws IOException {
+        MonthlyPaycheck();
+    }
+
+    private static final double FederalIncomeTax = 0.15;
+    private static final double StateTax = 0.035;
+    private static final double SocialSecurityTax = 0.0575;
+    private static final double MedicareMedicaidTax = 0.0275;
+    private static final double PensionPlan = 0.05;
+    private static final double HealthInsurance = 75.00;
+
+    private static String PrintFormatedFloat(String item, double value) {
+        return String.format("%-30s$ %.2f%n", item, value);
+    }
+
+    private static void MonthlyPaycheck() throws IOException {
         System.out.println("ICA-4-3 Version 2.");
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please enter your gross amount:");
+        System.out.print("Please enter your gross amount: ");
         double gross = input.nextDouble();
-        System.out.print("Please enter your name:");
+        System.out.print("Please enter your name: ");
         String name = input.next();
         input.close();
 
         PrintWriter output = new PrintWriter(new File("MonthlyPaycheck.txt"));
         output.println(name);
-        output.printf("Gross Amount: 		    $ %.2f%n", gross);
-        output.printf("Federal Tax: 		    $ %.2f%n", gross * 0.15);
-        output.printf("State Tax: 		        $ %.2f%n", gross * 0.035);
-        output.printf("Social Security Tax: 	$ %.2f%n", gross * 0.0575);
-        output.printf("Medicare/Medicaid Tax: 	$ %.2f%n", gross * 0.0275);
-        output.printf("Pension Plan: 		    $ %.2f%n", gross * 0.05);
-        output.printf("Health Insurance: 	    $ %.2f%n", 75.00);
-        output.printf("Net Pay: 		        $ %.2f%n", gross - gross * (0.15 + 0.035 + 0.0575 + 0.0275 + 0.05) - 75);
+        output.printf(PrintFormatedFloat("Gross Amount:", gross));
+        output.printf(PrintFormatedFloat("Federal Tax:", gross * FederalIncomeTax));
+        output.printf(PrintFormatedFloat("State Tax:", gross * StateTax));
+        output.printf(PrintFormatedFloat("Social Security Tax:", gross * SocialSecurityTax));
+        output.printf(PrintFormatedFloat("Medicare/Medicaid Tax:", gross * MedicareMedicaidTax));
+        output.printf(PrintFormatedFloat("Pension Plan:", gross * PensionPlan));
+        output.printf(PrintFormatedFloat("Health Insurance:", HealthInsurance));
+        output.printf(PrintFormatedFloat("Net Pay:", gross * (1 - FederalIncomeTax - StateTax - SocialSecurityTax - MedicareMedicaidTax - PensionPlan) - 75));
         output.close();
     }
 }
