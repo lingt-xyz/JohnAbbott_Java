@@ -16,7 +16,9 @@ public class Q1 {
     static int INCHES_PER_FOOT = 12;
 
     public static void main(String[] args) {
-        int[] inputs = GetInput();
+        // int[] inputs = GetInput_DO_WHILE();
+        // int[] inputs = GetInput_WHILE();
+        int[] inputs = GetInput_FOR();
         PrintResult(inputs[0], inputs[1]);
     }
 
@@ -25,22 +27,73 @@ public class Q1 {
      * 
      * @return
      */
-    private static int[] GetInput() {
+    private static int[] GetInput_DO_WHILE() {
         int feet = 0;
         int inches = 0;
 
         Scanner input = new Scanner(System.in);
         do {
-            System.out.print("Enter feet (it should be greater than 0): ");
+            System.out.printf("%nEnter feet (it should be greater or equal than 0): ");
             feet = input.nextInt();
         } while (feet < 0);
         do {
-            System.out.printf("%nEnter inches (it should be greater than 0): ");
+            System.out.printf("%nEnter inches (it should be greater or equal than 0): ");
             inches = input.nextInt();
         } while (inches < 0);
         input.close();
 
         return new int[]{feet, inches};
+    }
+
+    /**
+     * Read feet and inches from console
+     * 
+     * @return
+     */
+    private static int[] GetInput_WHILE() {
+        Scanner input = new Scanner(System.in);
+
+        int feet = -1;
+        while (feet < 0) {
+            System.out.printf("%nEnter feet (it should be greater or equal than 0): ");
+            feet = input.nextInt();
+        }
+
+        int inches = -1;
+        while (inches < 0) {
+            System.out.printf("%nEnter inches (it should be greater or equal than 0): ");
+            inches = input.nextInt();
+        };
+        
+        input.close();
+
+        return new int[]{feet, inches};
+    }
+
+        /**
+     * Read feet and inches from console
+     * 
+     * @return
+     */
+    private static int[] GetInput_FOR() {
+        Scanner input = new Scanner(System.in);
+        int finalFeet =0;
+        int finalInches = 0;
+        for (int feet = -1; feet < 0;) {
+            System.out.printf("%nEnter feet (it should be greater or equal than 0): ");
+            feet = input.nextInt();
+            finalFeet = feet;
+        }
+
+        for (int inches = -1; inches < 0;) {
+            System.out.printf("%nEnter inches (it should be greater or equal than 0): ");
+            inches = input.nextInt();
+            finalInches = inches;
+        };
+        
+        input.close();
+
+        return new int[]{finalFeet, finalInches};
     }
 
     /**
