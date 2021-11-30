@@ -16,9 +16,17 @@ public class Q1 {
     static int INCHES_PER_FOOT = 12;
 
     public static void main(String[] args) {
+        /**
+         * You can play with the following three types of control flow:
+         *  1. do while
+         *  2. while
+         *  3. for
+         */
+
         // int[] inputs = GetInput_DO_WHILE();
         // int[] inputs = GetInput_WHILE();
         int[] inputs = GetInput_FOR();
+        
         PrintResult(inputs[0], inputs[1]);
     }
 
