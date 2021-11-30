@@ -85,14 +85,15 @@ public class Q1 {
      */
     private static int[] GetInput_FOR() {
         Scanner input = new Scanner(System.in);
+
         int finalFeet =0;
-        int finalInches = 0;
         for (int feet = -1; feet < 0;) {
             System.out.printf("%nEnter feet (it should be greater or equal than 0): ");
             feet = input.nextInt();
             finalFeet = feet;
         }
 
+        int finalInches = 0;
         for (int inches = -1; inches < 0;) {
             System.out.printf("%nEnter inches (it should be greater or equal than 0): ");
             inches = input.nextInt();
